@@ -31,29 +31,9 @@ class Ray:
 
 
 class Sphere:
-    def __init__(self, center, radius, color, finish):
+    def __init__(self, center, radius):
         self.center = center
         self.radius = radius
-        self.color = color
-        self.finish = finish
 
     def __eq__(self, other):
-        return (self.center == other.center) and utility.epsilon_equal(self.radius, other.radius, 0.00001) and (self.color == other.color) and utility.epsilon_equal(self.finish, other.finish, 0.00001)
-
-
-class Color:
-    def __init__(self, r, g, b):
-        self.r = r
-        self.g = g
-        self.b = b
-
-    def __eq__(self, other):
-        return utility.epsilon_equal(self.r, other.r, 0.00001) and utility.epsilon_equal(self.g, other.g, 0.00001) and utility.epsilon_equal(self.b, other.b, 0.00001)
-
-
-class Finish:
-    def __init__(self, ambient):
-        self.ambient = ambient  # percentage of ambient light reflected by the finish
-
-    def __eq__(self, other):
-        return utility.epsilon_equal(self.ambient, other.ambient, 0.00001)
+        return (self.center == other.center) and utility.epsilon_equal(self.radius, other.radius, 0.00001)

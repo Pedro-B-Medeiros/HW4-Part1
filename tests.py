@@ -238,7 +238,7 @@ class TestCases2(unittest.TestCase):
         self.assertEqual(sphere_normal, vm.normalize_vector(data.Vector(1, -1, -1)))
     def test_cast_ray(self):
         ray = data.Ray(data.Point(0, 0, -14), data.Vector(0, 0, 1))
-        sphere_list = [data.Sphere(data.Point(1.0, 1.0, 0.0), 2, data.Color(255, 0, 0)), data.Sphere(data.Point(0.5, 1.5, -3), 0.5, data.Color(0, 0, 255))]
+        sphere_list = [data.Sphere(data.Point(1.0, 1.0, 0.0), 2), data.Sphere(data.Point(0.5, 1.5, -3), 0.5)]
         self.assertTrue(cast.cast_ray(ray, sphere_list))
 
 
